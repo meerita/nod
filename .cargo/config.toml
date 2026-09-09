@@ -1,0 +1,5 @@
+# Nod builds for bare-metal aarch64 by default.
+# `09-build-and-tooling.md` requires explicit build inputs.
+
+[build]
+target = "aarch64-unknown-none"
