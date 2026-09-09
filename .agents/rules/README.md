@@ -14,6 +14,7 @@ Read:
 * `07-security.md` for security rules.
 * `10-rust.md` for Rust rules.
 * `15-unsafe.md` for unsafe Rust rules.
+* `20-networking.md` for networking rules.
 * `28-internal-artifacts.md` for the internal artifact corpus.
 * `29-public-documentation.md` for public documentation rules.
 * `40-testing.md` for test rules.
