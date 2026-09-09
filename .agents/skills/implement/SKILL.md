@@ -246,4 +246,4 @@ Before reporting implementation complete:
 
 Implementation completion does not replace `definition-of-done`.
 
-`definition-of-done` performs the final plan-to-result audit.
+`definition-of-done` performs the final task-or-plan-to-result audit.

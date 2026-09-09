@@ -1,11 +1,11 @@
 ---
 name: definition-of-done
-description: "Audit whether an implemented Nod plan delivered its required scope, decisions, outcomes, evidence, and closure conditions. Does not implement code or run development validation."
+description: "Audit whether an implemented Nod task or plan delivered its required scope, decisions, outcomes, evidence, and closure conditions. Does not implement code or run development validation."
 ---
 
 # Definition of Done
 
-Audit an implemented plan.
+Audit an implemented task or plan.
 
 Do not implement production code.
 
@@ -17,10 +17,11 @@ Use the evidence produced during implementation.
 
 Require:
 
-* The approved plan.
+* The approved task or plan.
+* The exact repository revision being audited.
 * The implemented repository state.
 * The implementation diff or commits.
-* Phase execution records.
+* Phase execution records when a plan exists.
 * Evidence produced during implementation.
 
 Do not determine completion from a summary alone.
@@ -31,32 +32,32 @@ Do not reconstruct evidence that implementation failed to record.
 
 Answer:
 
-> Did the implementation deliver what the approved plan required?
+> Did the implementation deliver what the approved task or plan required?
 
-Evaluate the plan as written.
+Evaluate the approved task or plan as written.
 
 Do not add new requirements during this review.
 
 ## Scope
 
-Compare implemented work with planned scope.
+Compare implemented work with approved scope.
 
 Confirm that:
 
 * Required work exists.
-* Planned outcomes exist.
-* Planned ownership boundaries are preserved.
+* Required outcomes exist.
+* Required ownership boundaries are preserved.
 * Excluded scope remains excluded.
 * Material scope deviations are recorded.
-* Unrelated work did not replace planned work.
+* Unrelated work did not replace required work.
 
-A different implementation can satisfy the plan when it preserves the required contract and decisions.
+A different implementation can satisfy the approved work when it preserves the required contract and decisions.
 
 Do not require textual implementation fidelity when semantic fidelity is sufficient.
 
 ## Decisions
 
-For each material plan decision, confirm that implementation follows it.
+For each material approved decision, confirm that implementation follows it.
 
 Check applicable decisions such as:
 
@@ -71,11 +72,11 @@ Check applicable decisions such as:
 
 Report any implementation that contradicts a required decision.
 
-Do not reinterpret the plan to fit the implementation.
+Do not reinterpret the approved task or plan to fit the implementation.
 
 ## Phases
 
-For each phase, confirm that:
+When a plan exists, for each phase confirm that:
 
 * Required changes were implemented.
 * The observable outcome exists.
@@ -91,7 +92,7 @@ Do not repeat phase validation.
 
 ## Evidence
 
-Compare planned evidence with implementation evidence.
+Compare required task or plan evidence with implementation evidence.
 
 For each required result, confirm that the execution record contains the required proof.
 
@@ -110,7 +111,7 @@ Evidence can include:
 
 A required result without recorded evidence is incomplete.
 
-A failed required result is incomplete unless the plan explicitly accepts that result.
+A failed required result is incomplete unless the approved task or plan explicitly accepts that result.
 
 Do not infer a pass from code state.
 
@@ -120,14 +121,14 @@ Do not rerun missing evidence.
 
 ## Performance
 
-When the plan requires performance evidence, confirm that:
+When the task or plan requires performance evidence, confirm that:
 
 * The required baseline exists.
 * The required workload exists.
 * The required metric exists.
 * The required measurement exists.
 * The environment is recorded when required.
-* The result supports the planned decision when required.
+* The result supports the required decision when required.
 * Material negative results were preserved.
 
 Do not benchmark again.
@@ -136,7 +137,7 @@ Do not benchmark again.
 
 ## Gaps
 
-Inspect gaps referenced or opened by the plan.
+Inspect gaps referenced or opened by the task or plan.
 
 Confirm that:
 
@@ -156,14 +157,14 @@ A deviation is acceptable when:
 * It is recorded.
 * Its reason is recorded.
 * Required evidence supports it.
-* It preserves the required plan outcome.
-* The plan or owning decision was updated when required.
+* It preserves the required approved outcome.
+* The task, plan, or owning decision was updated when required.
 
 A silent material deviation is incomplete.
 
 ## Documentation
 
-When the plan requires documentation changes, confirm that:
+When the task or plan requires documentation changes, confirm that:
 
 * They exist.
 * They match implemented behavior.
@@ -175,7 +176,7 @@ Do not expand documentation scope during this review.
 
 ## Closing Phase
 
-When the plan has a closing phase, confirm that:
+When a plan has a closing phase, confirm that:
 
 * It was executed.
 * Its required evidence exists.
@@ -195,7 +196,7 @@ NOT DONE
 BLOCKED
 ```
 
-Use `DONE` when implementation and recorded evidence satisfy the approved plan.
+Use `DONE` when implementation and recorded evidence satisfy the approved task or plan.
 
 Use `NOT DONE` when required work, evidence, or closure is missing.
 
@@ -206,8 +207,9 @@ Use `BLOCKED` when completion cannot be determined because required information 
 Report only:
 
 * Status.
-* Missing planned work.
-* Plan deviations.
+* Audited revision.
+* Missing required work.
+* Task or plan deviations.
 * Missing required evidence.
 * Open blocking gaps.
 * Required corrections.
