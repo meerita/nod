@@ -41,11 +41,8 @@ Do not turn an investigation into a general survey.
 
 ## Artifact
 
-Write the investigation under:
-
-```text
-tmp/investigations/<NN>-<short-topic>.md
-```
+Write the investigation at the path that `28-internal-artifacts.md` declares for an
+investigation.
 
 Use a directory only when one file cannot hold the required evidence clearly.
 
