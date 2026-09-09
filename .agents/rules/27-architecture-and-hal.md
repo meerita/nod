@@ -12,7 +12,7 @@ Initial research baseline:
 
 Research roadmap:
 
-- `tmp/research/hal-research-roadmap.md`
+- `tmp/research/roadmap/hal-research-roadmap.md`
 
 ---
 
@@ -197,7 +197,7 @@ The following subjects remain open and must be resolved one by one:
 13. hot-plug/topology update model,
 14. QEMU-to-Raspberry-Pi portability validation.
 
-The detailed checklist lives in `tmp/research/hal-research-roadmap.md`.
+The detailed checklist lives in `tmp/research/roadmap/hal-research-roadmap.md`.
 
 ---
 
