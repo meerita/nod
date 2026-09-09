@@ -3,6 +3,14 @@
 # `09-build-and-tooling.md` owns the entry point policy. Each target delegates
 # to the tool that owns the implementation. Do not duplicate delegated logic
 # here.
+#
+# Build inputs:
+#
+#   CARGO   The cargo binary that every target invokes.
+#           Scope:    every target in this file.
+#           Required: no.
+#           Default:  cargo, resolved from PATH, which `rust-toolchain.toml`
+#                     pins to the declared channel.
 
 CARGO ?= cargo
 
