@@ -7,8 +7,6 @@ description: "Convert an approved Nod investigation or an understood task into a
 
 Use `/plan-authoring` when the design is settled and the work is material.
 
-Do not implement production code.
-
 Do not re-decide architecture. `/investigate` owns that.
 
 ## Ownership
