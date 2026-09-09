@@ -172,11 +172,8 @@ a certain way does not make that behavior a Nod requirement.
 
 ## Artifact
 
-When durable evidence is useful, write it under:
-
-```text
-tmp/compatibility/<NN>-<short-topic>.md
-```
+When durable evidence is useful, write it at the path that `28-internal-artifacts.md`
+declares for compatibility evidence.
 
 Keep generated probe artifacts beside it only when they are required to reproduce the result.
 

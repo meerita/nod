@@ -21,7 +21,8 @@ This skill owns the **integration mutation** and nothing earlier in the pipeline
 * Confirming the PR still points at the checked revision.
 * Merging the PR into `master`.
 * Verifying the resulting ancestry.
-* Safe cleanup of fully merged topic branches.
+* Deletion of the merged topic branch on the remote and locally.
+* Completion of the merged plan.
 
 It does not own:
 
@@ -108,7 +109,9 @@ Do not declare success from the merge command alone.
 
 ## Branch Cleanup
 
-Delete a topic branch only when:
+Delete the merged topic branch on the remote and locally.
+
+Delete it only when:
 
 * the merge is verified,
 * all intended work from the branch is reachable from `master`,
@@ -118,6 +121,30 @@ Delete a topic branch only when:
 Use non-destructive deletion.
 
 Do not delete a branch merely because the PR closed.
+
+## Plan Completion
+
+Move the merged plan to its completed state after the merge is verified.
+
+`28-internal-artifacts.md` owns the paths, the states, and the re-check that a move obliges.
+
+Complete a plan only.
+
+Do not move an investigation. `plan-authoring` completed it when the plan was authored.
+
+An investigation still active at merge time means the plan that consumed it skipped that
+step. Report it as a gap and do not move it, because the reduction belongs to the plan
+author.
+
+Move the file.
+
+Do not rewrite the plan.
+
+Do not summarize the plan.
+
+Do not complete a plan whose work is not fully merged.
+
+When the merged work has no plan, report that no plan applied.
 
 ## No Roadmap or Artifact Mutation
 
@@ -132,6 +159,8 @@ Do not:
 * decide that a milestone is complete.
 
 Those state changes belong to the workflow that owns the corresponding artifact.
+
+Moving a plan to its completed state changes its location, not its content.
 
 ## Not a Release
 
@@ -159,5 +188,6 @@ Head: <topic branch and checked SHA>
 Strategy: <merge strategy>
 Verified ancestry: <result>
 Branch cleanup: <result>
+Plan completion: <result>
 Gaps: <none or exact blocker>
 ```
