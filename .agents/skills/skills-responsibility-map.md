@@ -20,7 +20,9 @@ flowchart TD
     B -. performance evidence .-> M
 
     M --> D[/definition-of-done/]
-    D --> R[/pr-check/]
+    D --> DOC[/document/]
+    DOC --> R[/pr-check/]
+    D --> R
     R --> G[/pr-merge/]
     G --> MASTER[(master)]
 ```
@@ -35,6 +37,7 @@ flowchart TD
 | `benchmark` | reproducible performance measurement | architecture decision, optimization implementation unless explicitly part of the task |
 | `compatibility` | reproducible reference behavior at an explicit boundary | native Nod design decisions, performance claims, production implementation |
 | `definition-of-done` | audit approved task/plan against implementation evidence | producing missing evidence, running gates, implementing fixes |
+| `document` | durable public documentation of validated behavior | architecture decisions, implementation, completion auditing |
 | `pr-check` | branch/PR/revision integration readiness | re-reviewing implementation correctness or rerunning validation |
 | `pr-merge` | authorized merge into `master` and ancestry verification | validation, roadmap semantics, release publication |
 | `pr-review` | future external-contribution review only | ordinary internal Nod workflow |
@@ -79,12 +82,20 @@ Use:
 
 Do not insert `/chore`.
 
+### Durable behavior changed
+
+Use `/document` between `/definition-of-done` and `/pr-check`.
+
+A change that alters no durable public behavior skips it.
+
 ### Merge path
 
 Use:
 
 ```text
 /definition-of-done
+    ->
+/document, when durable public behavior changed
     ->
 /pr-check
     ->
