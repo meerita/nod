@@ -26,5 +26,8 @@ see-also: [01-project-invariants.md, 40-testing.md]
 * Report incomplete work.
 * Report assumptions that affect correctness.
 * Do not claim success when a required gate fails.
+* Do not attribute work to a tool.
+* Do not add a tool trailer or a generated-by marker to a commit, a pull request, a comment, or documentation.
+* Preserve human co-authorship.
 * Do not duplicate a rule that another file owns.
 * Update the owning rule when a project constraint changes.

@@ -9,6 +9,6 @@ Load other rules only when the task requires them.
 
 Use `.agents/rules/README.md` to find the rule that owns a constraint.
 
-Use the applicable skill in `.agents/skills/`.
+Use `.agents/skills/skills-responsibility-map.md` to find the skill that owns a decision.
 
 Do not duplicate rules between files.
