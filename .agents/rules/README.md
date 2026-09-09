@@ -14,6 +14,7 @@ Read:
 * `07-security.md` for security rules.
 * `10-rust.md` for Rust rules.
 * `15-unsafe.md` for unsafe Rust rules.
+* `28-internal-artifacts.md` for the internal artifact corpus.
 * `40-testing.md` for test rules.
 * `42-performance.md` for performance rules.
 
