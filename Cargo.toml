@@ -1,6 +1,6 @@
 [workspace]
 resolver = "3"
-members = []
+members = ["kernel"]
 
 [workspace.package]
 version = "0.1.0"
@@ -15,9 +15,9 @@ warnings = "deny"
 unused_results = "deny"
 
 [workspace.lints.clippy]
-all = "deny"
-pedantic = "deny"
-nursery = "warn"
+all = { level = "deny", priority = -1 }
+pedantic = { level = "deny", priority = -1 }
+nursery = { level = "warn", priority = -1 }
 
 unwrap_used = "deny"
 expect_used = "deny"
