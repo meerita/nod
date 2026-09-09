@@ -1,0 +1,40 @@
+# Rust
+/target/
+
+# Generated OS artifacts
+/build/
+/dist/
+*.img
+*.iso
+*.bin
+*.elf
+*.map
+
+# Virtual machines / QEMU
+*.qcow2
+*.raw
+*.pid
+*.log
+
+# Debugging
+*.dSYM/
+core
+core.*
+
+# Temporary files
+/tmp/
+*.swp
+*.swo
+*~
+
+# Environment / local configuration
+.env
+.env.*
+!.env.example
+
+# Editors
+.idea/
+.vscode/
+
+# macOS
+.DS_Store
