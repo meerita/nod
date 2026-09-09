@@ -1,4 +1,11 @@
-# 27 — Architecture and HAL
+---
+name: 27-architecture-and-hal
+description: "Records the current Nod architecture and HAL direction, and the research gates required before a permanent rule is written."
+owns: "architecture and HAL research direction; architecture research gates"
+see-also: [01-project-invariants.md, 18-drivers-and-hardware.md, 23-boot-and-machine-specialization.md]
+---
+
+# 27. Architecture and HAL
 
 ## Status
 
