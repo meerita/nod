@@ -38,3 +38,7 @@ core.*
 
 # macOS
 .DS_Store
+
+# Claude Code (local only; AGENTS.md and .agents/ are the source of truth)
+/CLAUDE.md
+/.claude/
