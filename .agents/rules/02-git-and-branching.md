@@ -64,10 +64,12 @@ see-also: [00-agent-behavior.md]
 
 ## Pull requests
 
+* Open the pull request as a draft.
 * Use the commit subject form for the pull request title.
 * State what changed, why it changed, which validation ran, and which gaps stay open.
 * Record the revision that the completion audit approved.
 * Apply at least one area label that matches the topic branch area.
+* Assign the pull request to the responsible maintainer.
 * Follow `04-writing-and-documentation.md`.
 * Keep the description short.
 * Do not restate the diff.
