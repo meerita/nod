@@ -32,6 +32,7 @@ plan            tmp/plans/<NN>-<short-topic>.md
                 tmp/plans/completed/
 research        tmp/research/
 compatibility   tmp/compatibility/<NN>-<short-topic>.md
+roadmap         tmp/roadmap.md
 backup          tmp/backups/<date>-<topic>/
 ```
 
@@ -47,7 +48,7 @@ A completed artifact lives under `completed/` inside its own class.
 
 A rejected investigation does not move.
 
-A research, compatibility, or backup artifact has no state transition.
+A research, compatibility, roadmap, or backup artifact has no state transition.
 
 ## Transitions
 
@@ -59,6 +60,8 @@ complete a plan             pr-merge
 ```
 
 Do not perform a transition that another skill owns.
+
+No skill owns the roadmap update. That decision stays open.
 
 Report an artifact in an illegal state as a gap.
 
