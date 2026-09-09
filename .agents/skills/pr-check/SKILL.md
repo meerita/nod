@@ -18,7 +18,7 @@ This skill owns **integration readiness**, not implementation correctness.
 * Branch-policy compliance.
 * Mergeability.
 * Required remote check state.
-* Pull-request metadata required by repository policy.
+* Pull-request metadata required by `02-git-and-branching.md`.
 * Draft-to-ready transition.
 
 It does not own:
@@ -82,6 +82,8 @@ required PR metadata is present
 the proposed merge strategy preserves repository history policy
 no unresolved merge conflict exists
 ```
+
+`02-git-and-branching.md` owns pull-request metadata.
 
 Do not repeat the task/plan audit.
 

@@ -62,6 +62,17 @@ see-also: [00-agent-behavior.md]
 * Preserve useful topic-branch commits during integration.
 * Squash work-in-progress commits before publication when their individual history has no lasting value.
 
+## Pull requests
+
+* Use the commit subject form for the pull request title.
+* State what changed, why it changed, which validation ran, and which gaps stay open.
+* Record the revision that the completion audit approved.
+* Apply at least one area label that matches the topic branch area.
+* Follow `04-writing-and-documentation.md`.
+* Keep the description short.
+* Do not restate the diff.
+* Link to the owning document instead of copying it.
+
 ## Change scope
 
 * Do not rewrite unrelated history.
