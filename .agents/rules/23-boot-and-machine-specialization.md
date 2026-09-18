@@ -41,6 +41,18 @@ Firmware behavior below the Nod boundary is external.
 
 Do not treat firmware code as part of Nod.
 
+The machine profile declares the entry exception level.
+
+Boot code validates the observed level against the declaration.
+
+Discovery validates a profile. Discovery never selects one.
+
+A mismatch rejects the optimized boot, as Fallback requires.
+
+Nod never enters at EL3.
+
+Source: `tmp/investigations/completed/01-aarch64-execution-level-and-privilege-model.md`.
+
 ## Boot Code
 
 Boot code owns:
@@ -65,6 +77,7 @@ A machine profile describes the hardware and specialization inputs that Nod need
 Applicable data can include:
 
 * Architecture.
+* Entry exception level.
 * CPU model.
 * Core count.
 * Core topology.
