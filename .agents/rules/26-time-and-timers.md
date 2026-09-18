@@ -2,7 +2,7 @@
 name: 26-time-and-timers
 description: "Defines Nod clocks, timers, deadlines, timekeeping, timer ownership, and machine-specific time sources."
 owns: "clock semantics; timers; deadlines; timekeeping; timer ownership; time-source selection"
-see-also: [12-concurrency-and-synchronization.md, 16-ipc-and-messaging.md, 17-scheduling-and-execution.md, 23-boot-and-machine-specialization.md, 25-observability-and-diagnostics.md]
+see-also: [12-concurrency-and-synchronization.md, 16-ipc-and-messaging.md, 17-scheduling-and-execution.md, 23-boot-and-machine-specialization.md, 25-observability-and-diagnostics.md, 27-architecture-and-hal.md]
 ---
 
 # 26. Time and Timers
@@ -117,6 +117,12 @@ virtual timer
 ```
 
 The time subsystem selects the source that satisfies the required contract.
+
+On AArch64 the available comparator set and the timer interrupt identifier
+depend on the kernel execution level. The machine supplies the identifier as
+handoff data.
+
+Source: `tmp/investigations/completed/01-aarch64-execution-level-and-privilege-model.md`.
 
 Do not expose raw hardware counters as the native application clock.
 
