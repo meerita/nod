@@ -185,6 +185,47 @@ If the Raspberry Pi port requires widespread machine-specific changes inside `ar
 
 ---
 
+## AArch64 Execution Level
+
+Source: `tmp/investigations/completed/01-aarch64-execution-level-and-privilege-model.md`.
+That investigation closes GAP-3 of investigation 00. The 00 invalidation
+condition ("GAP-3 resolves toward EL2 in a way that changes the arch and
+machine split") is resolved, not triggered. The arch and machine split does
+not change.
+
+The Nod kernel executes at EL1 or at EL2 with `HCR_EL2.E2H = 1`. It never
+executes at EL2 with `E2H = 0`. It never executes at EL3.
+
+The execution level type has exactly two values, `El1` and `El2Vhe`. It is a
+compile-time parameter of the machine image. It is never read on a hot path.
+
+The machine profile declares the level. The level is fixed for a machine
+image. Machines that cannot provide EL2 use an EL1 machine profile. The EL1
+profile is a first-class profile, not a recovery profile. Boot-time
+discovery validates the declared level against `CurrentEL` and, for the EL2
+profile, against `ID_AA64MMFR1_EL1.VH`. Discovery never changes the profile.
+A mismatch rejects the optimized boot.
+
+The kernel source names EL1 registers at both levels. The architecture
+redirects those names at EL2. No path reached per interrupt, per context
+switch, or per system call branches on the execution level. `arch/aarch64`
+must not carry such a branch. This prohibition belongs to the forbidden
+leakage list for `arch/<isa>`.
+
+`arch/aarch64` owns the three boot entry paths, the minimal EL2 vector
+table, the exception vectors, and the EL2 configuration register writes.
+`machine/<family>` owns the declared level, the entry contract, and the
+validation binding. The EL2 profile sets `{E2H, TGE} = {1, 1}` and keeps it.
+It zeroes `CNTVOFF_EL2` unless the producer guarantees zero.
+
+The execution level is a configuration input to `RootIrqController`. The
+timer interrupt identifier is a handoff set selected by the level, not one
+identifier. The `hwdrv` contract set stays closed at six. The EL2 profile is
+not permission to build a hypervisor. Guest support, second-stage tables,
+and virtual interrupt injection are out of scope.
+
+---
+
 ## Research Gates Before a Permanent Rule
 
 The following subjects remain open and must be resolved one by one:
