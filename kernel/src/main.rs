@@ -8,27 +8,17 @@
 // lives here. Every other crate keeps the workspace default.
 #![allow(unsafe_code)]
 
+mod arch;
+mod machine;
+
 use core::panic::PanicInfo;
 
-/// Entry point reached from the reset vector.
-#[unsafe(no_mangle)]
-pub extern "C" fn _start() -> ! {
-    halt()
-}
-
-/// Stops the calling processor.
-fn halt() -> ! {
-    loop {
-        // SAFETY: `wfe` waits for an event and changes no architectural state
-        // that the caller depends on. The processor resumes at the next
-        // instruction, which returns to this loop.
-        unsafe {
-            core::arch::asm!("wfe", options(nomem, nostack, preserves_flags));
-        }
-    }
+/// Generic entry reached from architecture early entry.
+pub(crate) fn kernel_entry() -> ! {
+    crate::machine::qemu_virt::boot()
 }
 
 #[panic_handler]
 fn panic(_info: &PanicInfo) -> ! {
-    halt()
+    crate::arch::aarch64::park()
 }
