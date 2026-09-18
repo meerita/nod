@@ -2,7 +2,7 @@
 name: 23-boot-and-machine-specialization
 description: "Defines Nod boot flow, machine profiles, specialization, hardware discovery, recovery images, and machine-specific system generation."
 owns: "boot flow; machine profiles; specialization; recovery boot; machine-specific image generation"
-see-also: [01-project-invariants.md, 09-build-and-tooling.md, 13-memory-management.md, 17-scheduling-and-execution.md, 18-drivers-and-hardware.md]
+see-also: [01-project-invariants.md, 09-build-and-tooling.md, 13-memory-management.md, 17-scheduling-and-execution.md, 18-drivers-and-hardware.md, 27-architecture-and-hal.md]
 ---
 
 # 23. Boot and Machine Specialization

@@ -2,7 +2,7 @@
 name: 26-time-and-timers
 description: "Defines Nod clocks, timers, deadlines, timekeeping, timer ownership, and machine-specific time sources."
 owns: "clock semantics; timers; deadlines; timekeeping; timer ownership; time-source selection"
-see-also: [12-concurrency-and-synchronization.md, 16-ipc-and-messaging.md, 17-scheduling-and-execution.md, 23-boot-and-machine-specialization.md, 25-observability-and-diagnostics.md]
+see-also: [12-concurrency-and-synchronization.md, 16-ipc-and-messaging.md, 17-scheduling-and-execution.md, 23-boot-and-machine-specialization.md, 25-observability-and-diagnostics.md, 27-architecture-and-hal.md]
 ---
 
 # 26. Time and Timers
