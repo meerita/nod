@@ -20,5 +20,5 @@ pub(crate) fn kernel_entry() -> ! {
 
 #[panic_handler]
 fn panic(_info: &PanicInfo) -> ! {
-    crate::arch::aarch64::park()
+    crate::machine::qemu_virt::panic()
 }
